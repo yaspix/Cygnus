@@ -6,10 +6,11 @@ function init() {
     }
 }
 
-function changeDisp(element) {
-    let pages = document.querySelectorAll("page");
-
-    for (let i = 0; i < pages.length; i++) {
-        pages.item(i).getElementsByClassName.display = "none";
+function disp(value) {
+    let contents = document.getElementsByClassName("content");
+    for (let content of contents) {
+        content.style.display = "none";
     }
-}
+    let dispItem = document.getElementById(value);
+    dispItem.style.display = "block";
+};
