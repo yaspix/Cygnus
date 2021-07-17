@@ -1,8 +1,8 @@
 function init() {
     if (localStorage.name == null) {
-        console.log("Name:null");
+        disp("signUp");
     } else {
-        console.log("Name:" + localStorage.name);
+        disp("main");
     }
 }
 
@@ -13,4 +13,4 @@ function disp(value) {
     }
     let dispItem = document.getElementById(value);
     dispItem.style.display = "block";
-};
+}

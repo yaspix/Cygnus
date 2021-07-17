@@ -19,14 +19,14 @@
             </div>
             <div class="studentNum">
                 <label for="studentNum">Student Number</label>
-                <input type="number" name="studentNum" id="studentNum" required />
+                <input type="text" name="studentNum" id="studentNum" pattern="2[0-9]{3}" required />
             </div>
-            <div class="licenseKey">
+            <div class="productKey">
                 <label for="">Product Key</label>
-                <input type="number" name="ProductKey" id="ProductKey" required />
+                <input type="text" name="productKey" id="productKey" required />
             </div>
 
-            <button class="registerBtn" type="button">done</button>
+            <button class="doneBtn" type="button">done</button>
         </div>
 
         <!-- Main Content -->
@@ -42,7 +42,7 @@
                 <!-- Button to be bigger -->
                 <button id="front-button">
                     <span class="material-icons-outlined send"> send </span>
-                    <span class="material-icons-outlined done"> done </span>
+                    <!-- <span class="material-icons-outlined done"> done </span> -->
                 </button>
             </div>
         </div>
@@ -54,6 +54,7 @@
             </div>
             <a href="#" id=reset>Reset (Dangerous)</a>
         </div>
+        <script src="js/signup.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
