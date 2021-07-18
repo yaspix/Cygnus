@@ -1,7 +1,13 @@
-function licenseAuth() {
-    const productKey = document.querySelector("#productKey").value;
-    console.log(productKey);
+const name = document.querySelector("#name").value;
+const studentNum = Number(document.querySelector("#studentNum").value);
+const productKey = document.querySelector("#productKey").value;
+const doneBtn = document.querySelector(".doneBtn");
 
+function validation() {
+    const studentNumPettern = new RegExp("2[0-9]{3}");
+}
+
+function licenseAuth() {
     if (productKey == "Cygnus") {
         storeData();
     } else {
@@ -22,9 +28,6 @@ function storeData() {
         29: "２９Ｈ（宮前ホーム）",
     };
 
-    const name = document.querySelector("#name").value;
-    const studentNum = Number(document.querySelector("#studentNum").value);
-
     let individualData = {
         name: name,
         homeroom: hraList[Math.floor(studentNum / 100)],
@@ -33,5 +36,4 @@ function storeData() {
     console.log(individualData);
 }
 
-document.querySelector(".doneBtn").addEventListener("click", licenseAuth());
-    
+doneBtn.addEventListener("click", function () {});
