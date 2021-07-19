@@ -1,17 +1,18 @@
-const name = document.querySelector("#name").value;
-const studentNum = Number(document.querySelector("#studentNum").value);
-const productKey = document.querySelector("#productKey").value;
+const name = document.querySelector("#name");
+const studentNum = document.querySelector("#studentNum");
+const productKey = document.querySelector("#productKey");
 const doneBtn = document.querySelector(".doneBtn");
 
-function validation() {
-    const studentNumPettern = new RegExp("2[0-9]{3}");
-}
+const studentNumPettern = new RegExp("2[0-9]{3}");
 
+function stuID() {
+    return studentNumPettern.test(studentNum.value);
+}
 function licenseAuth() {
-    if (productKey == "Cygnus") {
+    if (productKey.value == "Cygnus") {
         storeData();
     } else {
-        productKey.textContent = "";
+        productKey.value = "";
         console.log("invalid Key");
     }
 }
@@ -29,9 +30,9 @@ function storeData() {
     };
 
     let individualData = {
-        name: name,
-        homeroom: hraList[Math.floor(studentNum / 100)],
-        studentNumTwoDigit: studentNum % 100,
+        name: name.value,
+        homeroom: hraList[Math.floor(Number(studentNum.value) / 100)],
+        studentNumTwoDigit: Number(studentNum.value) % 100,
     };
     console.log(individualData);
 }
