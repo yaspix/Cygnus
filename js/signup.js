@@ -5,17 +5,16 @@ const doneBtn = document.querySelector(".doneBtn");
 
 const studentNumPettern = new RegExp("2[0-9]{3}");
 
-function stuID() {
-    return studentNumPettern.test(studentNum.value);
-}
-function licenseAuth() {
-    if (productKey.value == "Cygnus") {
-        storeData();
+function validation(condition, element, errMsg) {
+    if (condition) {
+        return true;
     } else {
-        productKey.value = "";
-        console.log("invalid Key");
+        console.log("err: " + errMsg);
+        element.value = "";
+        return false;
     }
 }
+
 function storeData() {
     const hraList = {
         21: "２１Ｈ（加護ホーム）",
@@ -37,4 +36,13 @@ function storeData() {
     console.log(individualData);
 }
 
-doneBtn.addEventListener("click", function () {});
+doneBtn.addEventListener("click", function () {
+    let nameValidation = validation(name.value != "", name, "name is blank");
+    let studentNumValidation = validation(studentNumPettern.test(studentNum.value), studentNum, "invalid student number.");
+    let licenseAuth = validation(productKey.value == "Cygnus", productKey, "invalid product key");
+
+    if (nameValidation && studentNumValidation && licenseAuth) {
+        storeData();
+        disp("main");
+    }
+});
