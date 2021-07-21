@@ -2,7 +2,6 @@ const name = document.querySelector("#name");
 const studentNum = document.querySelector("#studentNum");
 const productKey = document.querySelector("#productKey");
 const doneBtn = document.querySelector(".doneBtn");
-
 const studentNumPettern = new RegExp("2[0-9]{3}");
 
 function validation(condition, element, errMsg) {
@@ -13,6 +12,11 @@ function validation(condition, element, errMsg) {
         element.value = "";
         return false;
     }
+}
+
+function removeFormData() {
+    localStorage.removeItem("formData");
+    location.reload();
 }
 
 function storeData() {
@@ -26,19 +30,25 @@ function storeData() {
         27: "２７Ｈ（亀倉ホーム）",
         28: "２８Ｈ（徳田ホーム）",
         29: "２９Ｈ（宮前ホーム）",
+        20: "２０Ｈ（中村ホーム）",
     };
 
-    let individualData = {
+    let formData = {
         name: name.value,
         homeroom: hraList[Math.floor(Number(studentNum.value) / 100)],
         studentNumTwoDigit: Number(studentNum.value) % 100,
     };
-    console.log(individualData);
+    localStorage.setItem("formData", JSON.stringify(formData));
+    console.log(localStorage.formData);
 }
 
 doneBtn.addEventListener("click", function () {
     let nameValidation = validation(name.value != "", name, "name is blank");
-    let studentNumValidation = validation(studentNumPettern.test(studentNum.value), studentNum, "invalid student number.");
+    let studentNumValidation = validation(
+        studentNumPettern.test(studentNum.value),
+        studentNum,
+        "invalid student number."
+    );
     let licenseAuth = validation(productKey.value == "Cygnus", productKey, "invalid product key");
 
     if (nameValidation && studentNumValidation && licenseAuth) {

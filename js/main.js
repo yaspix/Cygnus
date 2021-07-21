@@ -1,5 +1,5 @@
 function init() {
-    if (localStorage.individualData == undefined) {
+    if (!localStorage.getItem("formData")) {
         disp("signUp");
     } else {
         disp("main");
@@ -15,4 +15,4 @@ function disp(value) {
     dispItem.style.display = "block";
 }
 
-window.onload = init()
+window.onload = init();
