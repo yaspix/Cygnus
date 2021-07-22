@@ -16,7 +16,3 @@ let sendInfo = {
     month: date.getMonth() + 1,
     day: date.getDate(),
 };
-
-moreVertBtn.addEventListener("click", () => {
-    disp("config");
-});
