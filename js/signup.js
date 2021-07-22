@@ -42,14 +42,14 @@ function storeData() {
     console.log(localStorage.formData);
 }
 
-doneBtn.addEventListener("click", function () {
+doneBtn.addEventListener("click", () => {
     let nameValidation = validation(name.value != "", name, "name is blank");
     let studentNumValidation = validation(
-        studentNumPettern.test(studentNum.value),
+        studentNumPettern.test(studentNum.value) && studentNum.value.length == 4,
         studentNum,
         "invalid student number."
     );
-    let licenseAuth = validation(productKey.value == "Cygnus", productKey, "invalid product key");
+    let licenseAuth = validation(productKey.value === "Cygnus", productKey, "invalid product key");
 
     if (nameValidation && studentNumValidation && licenseAuth) {
         storeData();
