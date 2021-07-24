@@ -1,18 +1,35 @@
 const submitBtn = document.querySelector("#submitBtn");
-const moreVertBtn = document.querySelector(".moreVert");
+const moreVertBtn = document.querySelector(".moreVertBtn");
 const date = new Date();
+const googleFormsUrl = "https://docs.google.com/forms/d/e/";
 
-function getParam(param) {
-    let params = new URL(window.location.href).searchParams;
-    return params.get(param);
+function generateFormDataToSend() {
+    let storedData = JSON.parse(localStorage.getItem("formData"));
+    let formDataToSend = {
+        "entry.2001787292_year": date.getFullYear(),
+        "entry.2001787292_month": date.getMonth() + 1,
+        "entry.2001787292_day": date.getDate(),
+        "entry.1893219725": storedData.homeroom,
+        "entry.1301531773": storedData.studentNumTwoDigit,
+        "entry.2096025471": storedData.name,
+        "entry.2071193908": "熱はありません",
+        "entry.1616853833": "風邪症状はありません",
+    };
+    return formDataToSend;
 }
 
-function getFormData() {
-    return JSON.parse(localStorage.getItem("formData"));
+function generateFormUrl(formId) {
+    let url = new URL(googleFormsUrl + getParam("formId") + "/formResponse");
+    // let url = new URL(googleFormsUrl + getParam("formId") + "/viewform");
+    for (let key in generateFormDataToSend()) {
+        url.searchParams.append(key, generateFormDataToSend()[key]);
+    }
+    return url.href;
 }
 
-let sendInfo = {
-    year: date.getFullYear(),
-    month: date.getMonth() + 1,
-    day: date.getDate(),
-};
+function sendForm(formUrl) {
+    fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+    });
+}

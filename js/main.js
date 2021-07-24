@@ -15,6 +15,11 @@ function chDisp(value) {
     dispItem.style.display = "block";
 }
 
+function getParam(param) {
+    let params = new URL(window.location.href).searchParams;
+    return params.get(param);
+}
+
 // process when window is loaded
 
 window.onload = init();
