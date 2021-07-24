@@ -45,7 +45,7 @@ doneBtn.addEventListener("click", () => {
 submitBtn.addEventListener("click", () => {
     btnIcon.textContent = "done";
     btnIcon.style.color = "#16c79a"
-    let url = generateFormUrl(getParam("formId"));
+    let url = generateFormUrl(getParam("formId"), "formResponse");
     form.action = url;
     form.submit();
     
@@ -65,3 +65,8 @@ resetBtn.addEventListener("click", () => {
         removeFormData();
     }
 });
+
+openInGoogleForms.addEventListener("click", () => {
+    let url = generateFormUrl(getParam("formId"), "viewform");
+    window.location.href = url;
+})

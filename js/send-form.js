@@ -22,9 +22,8 @@ function generateFormDataToSend() {
     return formDataToSend;
 }
 
-function generateFormUrl(formId) {
-    let url = new URL(googleFormsUrl + getParam("formId") + "/formResponse");
-    // let url = new URL(googleFormsUrl + getParam("formId") + "/viewform");
+function generateFormUrl(formId, Path) {
+    let url = new URL(googleFormsUrl + getParam("formId") + "/" + Path);
     for (let key in generateFormDataToSend()) {
         url.searchParams.append(key, generateFormDataToSend()[key]);
     }
