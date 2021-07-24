@@ -1,0 +1,101 @@
+:root {
+    --text: #eeeeee;
+    --bg: #222831;
+    --bg-sub: #393e46;
+    --main: #d65a31;
+}
+
+body {
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.content {
+    height: 100vh;
+    padding: 30px;
+}
+
+/* Sign Up Form */
+.logo {
+    font-size: 4rem;
+}
+#signUp {
+    padding: 40px;
+}
+#signUp > div {
+    margin: 15px 0px;
+}
+#signUp > h1 {
+    margin-bottom: 30px;
+}
+label,
+input {
+    display: block;
+    width: 100%;
+}
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+input {
+    height: 40px;
+    border-bottom: solid var(--bg-sub) 1px;
+    padding: 5px;
+}
+.doneBtn {
+    margin-top: 5px;
+    color: #16c79a;
+}
+
+/* main page */
+#main {
+    font-size: 2rem;
+    text-align: center;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.logo-main {
+    font-size: 1.5rem;
+}
+.moreVertBtn {
+    padding-top: 6px;
+}
+#form {
+    margin-top: 20vh;
+}
+.submitBtn {
+    padding: 50px;
+    border-radius: 25px;
+    border: solid var(--bg-sub) 2px;
+}
+.submitBtn > span {
+    font-size: 6rem;
+}
+.greenIcon {
+    color: #16c79a;
+}
+/* config */
+#config {
+    font-size: 1.5rem;
+}
+.header-config {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#config > ul {
+    padding-left: 30px;
+    padding-top: 10px;
+    list-style-type: circle;
+}
+#resetBtn {
+    color: var(--main);
+}
+li {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

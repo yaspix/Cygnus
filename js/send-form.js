@@ -1,5 +1,9 @@
-const submitBtn = document.querySelector("#submitBtn");
+const submitBtn = document.querySelector(".submitBtn");
 const moreVertBtn = document.querySelector(".moreVertBtn");
+const form = document.querySelector("form");
+const iframe = document.querySelector("#hiddenIframe");
+const btnIcon = document.querySelector("#btnIcon");
+
 const date = new Date();
 const googleFormsUrl = "https://docs.google.com/forms/d/e/";
 
@@ -27,9 +31,7 @@ function generateFormUrl(formId) {
     return url.href;
 }
 
-function sendForm(formUrl) {
-    fetch(formUrl, {
-        method: "POST",
-        mode: "no-cors",
-    });
+function isSendSucceeded() {
+    let resLocation = iframe.contentWindow.location;
+    console.log(resLocation);
 }

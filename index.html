@@ -5,7 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cygnus</title>
+        <link rel="stylesheet" href="https://unpkg.com/destyle.css@2.0.2/destyle.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
@@ -13,7 +17,6 @@
 
         <div class="content" id="signUp">
             <h1><span class="logo">Cygnus</span></h1>
-            <h2>Sing Up</h2>
             <div class="name">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" required />
@@ -24,33 +27,44 @@
             </div>
             <div class="productKey">
                 <label for="">Product Key</label>
-                <input type="text" name="productKey" id="productKey" required />
+                <input type="password" name="productKey" id="productKey" required />
             </div>
 
-            <a href="#" class="doneBtn">Done</a>
+            <a href="#" class="doneBtn">Sign Up</a>
         </div>
 
         <!-- Main Content -->
         <div class="content" id="main">
             <div class="header">
-                <h1><span class="logo">Cygnus</span></h1>
+                <h1><span class="logo-main">Cygnus</span></h1>
                 <div class="moreVertBtn">
                     <span class="material-icons-outlined"> more_vert </span>
                 </div>
             </div>
-            <div class="submitBtmWraper">
-                <a href="#" class="submitBtn">
-                    <span class="material-icons-outlined send"> send </span>
-                </a>
-            </div>
+            <form action="#" method="post" id="form" target="hiddenIframe">
+                <button type="submit" class="submitBtn">
+                    <span class="material-icons-outlined" id="btnIcon"> send </span>
+                </button>
+            </form>
         </div>
+        <iframe name="hiddenIframe" id="hiddenIframe" src="" frameborder="0" style="display: none"></iframe>
 
         <!-- config -->
         <div class="content" id="config">
-            <div id="closeConfigBtn">
-                <span class="material-icons-outlined"> close </span>
+            <div class="header-config">
+                <h1>Settings</h1>
+                <div id="closeConfigBtn">
+                    <span class="material-icons-outlined"> close </span>
+                </div>
             </div>
-            <a href="#" id="resetBtn">Reset (Dangerous)</a>
+            <ul>
+                <li>
+                    <a href="#" id="resetBtn">Reset (Dangerous)</a>
+                </li>
+                <li>
+                    <a href="#">Open in Google Forms</a>
+                </li>
+            </ul>
         </div>
 
         <!-- JavaScript -->

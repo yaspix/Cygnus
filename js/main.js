@@ -42,6 +42,14 @@ doneBtn.addEventListener("click", () => {
 });
 
 // main window
+submitBtn.addEventListener("click", () => {
+    btnIcon.textContent = "done";
+    btnIcon.style.color = "#16c79a"
+    let url = generateFormUrl(getParam("formId"));
+    form.action = url;
+    form.submit();
+    
+});
 
 moreVertBtn.addEventListener("click", () => {
     chDisp("config");
