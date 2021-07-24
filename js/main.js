@@ -1,12 +1,12 @@
 function init() {
     if (!localStorage.getItem("formData")) {
-        disp("signUp");
+        chDisp("signUp");
     } else {
-        disp("main");
+        chDisp("main");
     }
 }
 
-function disp(value) {
+function chDisp(value) {
     let contents = document.getElementsByClassName("content");
     for (let content of contents) {
         content.style.display = "none";
@@ -32,17 +32,20 @@ doneBtn.addEventListener("click", () => {
 
     if (nameValidation && studentNumValidation && licenseAuth) {
         storeData();
-        disp("main");
+        chDisp("main");
     }
 });
 
 // main window
 
 moreVertBtn.addEventListener("click", () => {
-    disp("config");
+    chDisp("config");
 });
 
 // config window
+closeConfigBtn.addEventListener("click", () => {
+    chDisp("main");
+});
 
 resetBtn.addEventListener("click", () => {
     if (window.confirm("Are you sure?")) {

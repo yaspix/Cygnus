@@ -39,5 +39,4 @@ function storeData() {
         studentNumTwoDigit: Number(studentNum.value) % 100,
     };
     localStorage.setItem("formData", JSON.stringify(formData));
-    console.log(localStorage.formData);
 }
