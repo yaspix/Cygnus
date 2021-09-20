@@ -70,7 +70,7 @@ input {
 .submitBtn {
     padding: 50px;
     border-radius: 25px;
-    border: solid var(--bg-sub) 2px;
+    border: solid var(--bg-sub) 3px;
 }
 .submitBtn > span {
     font-size: 6rem;
@@ -90,10 +90,7 @@ input {
 #config > ul {
     padding-left: 30px;
     padding-top: 10px;
-    list-style-type: circle;
-}
-#resetBtn {
-    color: var(--main);
+    list-style-type: disc;
 }
 li {
     margin-top: 20px;

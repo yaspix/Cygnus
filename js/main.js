@@ -44,11 +44,11 @@ doneBtn.addEventListener("click", () => {
 // main window
 submitBtn.addEventListener("click", () => {
     btnIcon.textContent = "done";
-    btnIcon.style.color = "#16c79a"
+    btnIcon.style.color = "#16c79a";
+    submitBtn.style.borderColor = "#16c79a";
     let url = generateFormUrl(getParam("formId"), "formResponse");
     form.action = url;
     form.submit();
-    
 });
 
 moreVertBtn.addEventListener("click", () => {
@@ -69,4 +69,4 @@ resetBtn.addEventListener("click", () => {
 openInGoogleForms.addEventListener("click", () => {
     let url = generateFormUrl(getParam("formId"), "viewform");
     window.location.href = url;
-})
+});
