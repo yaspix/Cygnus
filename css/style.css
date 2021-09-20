@@ -64,8 +64,11 @@ input {
 .moreVertBtn {
     padding-top: 6px;
 }
-#form {
-    margin-top: 20vh;
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .submitBtn {
     padding: 50px;
